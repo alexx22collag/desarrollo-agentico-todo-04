@@ -1,0 +1,30 @@
+<div class="contact-fields">
+  <div class="field">
+    <label for="contact-name">Nombre</label>
+    <input id="contact-name" type="text" name="name" value="<%= contact.Name %>" maxlength="120" autocomplete="off" required<%= if (errors.Get("name") != nil) { %> aria-invalid="true" aria-describedby="name-error"<% } %>>
+    <%= if (errors.Get("name") != nil) { %>
+      <p id="name-error" class="field-error" role="alert"><%= for (msg) in errors.Get("name") { %><%= msg %><% } %></p>
+    <% } %>
+  </div>
+  <div class="field">
+    <label for="contact-email">Email</label>
+    <input id="contact-email" type="text" inputmode="email" name="email" value="<%= contact.Email %>" maxlength="200" autocomplete="off"<%= if (errors.Get("email") != nil) { %> aria-invalid="true" aria-describedby="email-error"<% } %>>
+    <%= if (errors.Get("email") != nil) { %>
+      <p id="email-error" class="field-error" role="alert"><%= for (msg) in errors.Get("email") { %><%= msg %><% } %></p>
+    <% } %>
+  </div>
+  <div class="field">
+    <label for="contact-phone">Teléfono</label>
+    <input id="contact-phone" type="text" inputmode="tel" name="phone" value="<%= contact.Phone %>" maxlength="40" autocomplete="off"<%= if (errors.Get("phone") != nil) { %> aria-invalid="true" aria-describedby="phone-error"<% } %>>
+    <%= if (errors.Get("phone") != nil) { %>
+      <p id="phone-error" class="field-error" role="alert"><%= for (msg) in errors.Get("phone") { %><%= msg %><% } %></p>
+    <% } %>
+  </div>
+  <div class="field">
+    <label for="contact-job-title">Cargo</label>
+    <input id="contact-job-title" type="text" name="job_title" value="<%= contact.JobTitle %>" maxlength="120" autocomplete="off"<%= if (errors.Get("job_title") != nil) { %> aria-invalid="true" aria-describedby="job-title-error"<% } %>>
+    <%= if (errors.Get("job_title") != nil) { %>
+      <p id="job-title-error" class="field-error" role="alert"><%= for (msg) in errors.Get("job_title") { %><%= msg %><% } %></p>
+    <% } %>
+  </div>
+</div>

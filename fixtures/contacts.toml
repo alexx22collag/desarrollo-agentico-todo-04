@@ -1,0 +1,32 @@
+[[scenario]]
+name = "tres contactos"
+
+  [[scenario.table]]
+    name = "contacts"
+
+    [[scenario.table.row]]
+      id = "<%= uuid() %>"
+      name = "ana Torres"
+      email = "ana@example.com"
+      phone = "600 111 222"
+      job_title = "Directora comercial"
+      created_at = "<%= now() %>"
+      updated_at = "<%= now() %>"
+
+    [[scenario.table.row]]
+      id = "<%= uuid() %>"
+      name = "Bruno Díaz"
+      email = ""
+      phone = ""
+      job_title = ""
+      created_at = "<%= now() %>"
+      updated_at = "<%= now() %>"
+
+    [[scenario.table.row]]
+      id = "<%= uuid() %>"
+      name = "Carla Ruiz"
+      email = "carla@example.com"
+      phone = ""
+      job_title = "Compras"
+      created_at = "<%= now() %>"
+      updated_at = "<%= now() %>"
