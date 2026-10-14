@@ -21,13 +21,17 @@ const (
 
 // Contact representa una persona de contacto del CRM.
 type Contact struct {
-	ID        uuid.UUID `json:"id" db:"id" form:"-"`
-	Name      string    `json:"name" db:"name" form:"name"`
-	Email     string    `json:"email" db:"email" form:"email"`
-	Phone     string    `json:"phone" db:"phone" form:"phone"`
-	JobTitle  string    `json:"job_title" db:"job_title" form:"job_title"`
-	CreatedAt time.Time `json:"created_at" db:"created_at" form:"-"`
-	UpdatedAt time.Time `json:"updated_at" db:"updated_at" form:"-"`
+	ID       uuid.UUID `json:"id" db:"id" form:"-"`
+	Name     string    `json:"name" db:"name" form:"name"`
+	Email    string    `json:"email" db:"email" form:"email"`
+	Phone    string    `json:"phone" db:"phone" form:"phone"`
+	JobTitle string    `json:"job_title" db:"job_title" form:"job_title"`
+	// CompanyID es la empresa del contacto; no válido significa «sin empresa».
+	CompanyID uuid.NullUUID `json:"company_id" db:"company_id" form:"-"`
+	// CompanyName se rellena al listar contactos; no se guarda.
+	CompanyName string    `json:"-" db:"-" form:"-"`
+	CreatedAt   time.Time `json:"created_at" db:"created_at" form:"-"`
+	UpdatedAt   time.Time `json:"updated_at" db:"updated_at" form:"-"`
 }
 
 // Contacts es una colección de Contact.

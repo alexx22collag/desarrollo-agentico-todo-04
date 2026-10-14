@@ -26,6 +26,7 @@
             <%= if (ct.JobTitle != "") { %><span class="contact-meta"><%= ct.JobTitle %></span><% } %>
           </div>
           <div class="contact-details">
+            <%= if (ct.CompanyName != "") { %><span class="contact-company"><%= ct.CompanyName %></span><% } %>
             <%= if (ct.Email != "") { %><span><%= ct.Email %></span><% } %>
             <%= if (ct.Phone != "") { %><span><%= ct.Phone %></span><% } %>
           </div>

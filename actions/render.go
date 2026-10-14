@@ -39,5 +39,8 @@ func navSection(path string) string {
 	if path == "/contactos" || strings.HasPrefix(path, "/contactos/") {
 		return "contacts"
 	}
+	if path == "/empresas" || strings.HasPrefix(path, "/empresas/") {
+		return "companies"
+	}
 	return "tasks"
 }

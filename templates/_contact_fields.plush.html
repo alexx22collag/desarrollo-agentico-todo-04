@@ -27,4 +27,13 @@
       <p id="job-title-error" class="field-error" role="alert"><%= for (msg) in errors.Get("job_title") { %><%= msg %><% } %></p>
     <% } %>
   </div>
+  <div class="field">
+    <label for="contact-company">Empresa</label>
+    <select id="contact-company" name="company_id">
+      <option value="">Sin empresa</option>
+      <%= for (co) in companies { %>
+        <option value="<%= co.ID %>"<%= if (contact.CompanyID.Valid && contact.CompanyID.UUID.String() == co.ID.String()) { %> selected<% } %>><%= co.Name %></option>
+      <% } %>
+    </select>
+  </div>
 </div>

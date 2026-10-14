@@ -1,0 +1,9 @@
+create_table("companies") {
+	t.Column("id", "uuid", {primary: true})
+	t.Column("name", "string", {"size": 150})
+	t.Column("website", "string", {"size": 200, "default": ""})
+	t.Column("sector", "string", {"size": 100, "default": ""})
+	t.Timestamps()
+}
+
+sql("CREATE UNIQUE INDEX companies_name_lower_idx ON companies (lower(name));")

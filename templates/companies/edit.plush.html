@@ -1,0 +1,14 @@
+<header class="page-header">
+  <a href="/empresas" class="back-link"><span aria-hidden="true">←</span> Volver a empresas</a>
+  <h1>Editar empresa</h1>
+</header>
+
+<form action="/empresas/<%= company.ID %>" method="POST" class="contact-form">
+  <input type="hidden" name="authenticity_token" value="<%= authenticity_token %>">
+  <input type="hidden" name="_method" value="PUT">
+  <%= partial("company_fields.plush.html") %>
+  <div class="edit-task-actions">
+    <a href="/empresas" class="button">Cancelar</a>
+    <button type="submit" class="button button-primary">Guardar cambios</button>
+  </div>
+</form>

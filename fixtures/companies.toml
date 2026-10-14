@@ -1,0 +1,53 @@
+[[scenario]]
+name = "empresas con contactos"
+
+  [[scenario.table]]
+    name = "companies"
+
+    [[scenario.table.row]]
+      id = "11111111-1111-4111-8111-111111111111"
+      name = "Acme S.L."
+      website = "https://acme.example.com"
+      sector = "Industria"
+      created_at = "<%= now() %>"
+      updated_at = "<%= now() %>"
+
+    [[scenario.table.row]]
+      id = "22222222-2222-4222-8222-222222222222"
+      name = "globex"
+      website = ""
+      sector = ""
+      created_at = "<%= now() %>"
+      updated_at = "<%= now() %>"
+
+  [[scenario.table]]
+    name = "contacts"
+
+    [[scenario.table.row]]
+      id = "<%= uuid() %>"
+      name = "Ana Acme"
+      email = "ana@acme.example.com"
+      phone = ""
+      job_title = "Compras"
+      company_id = "11111111-1111-4111-8111-111111111111"
+      created_at = "<%= now() %>"
+      updated_at = "<%= now() %>"
+
+    [[scenario.table.row]]
+      id = "<%= uuid() %>"
+      name = "Beto Acme"
+      email = ""
+      phone = ""
+      job_title = ""
+      company_id = "11111111-1111-4111-8111-111111111111"
+      created_at = "<%= now() %>"
+      updated_at = "<%= now() %>"
+
+    [[scenario.table.row]]
+      id = "<%= uuid() %>"
+      name = "Cris Libre"
+      email = ""
+      phone = ""
+      job_title = ""
+      created_at = "<%= now() %>"
+      updated_at = "<%= now() %>"
