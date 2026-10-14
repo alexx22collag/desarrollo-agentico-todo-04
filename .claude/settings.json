@@ -68,7 +68,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/adw/scripts/log.sh\" hook"
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/adw/scripts/log.sh\" hook",
+            "shell": "bash"
           }
         ]
       }
@@ -79,7 +80,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/adw/scripts/log.sh\" hook"
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/adw/scripts/log.sh\" hook",
+            "shell": "bash"
           }
         ]
       }
@@ -90,7 +92,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/adw/scripts/log.sh\" hook"
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/adw/scripts/log.sh\" hook",
+            "shell": "bash"
           }
         ]
       }
@@ -101,7 +104,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/adw/scripts/log.sh\" hook"
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/adw/scripts/log.sh\" hook",
+            "shell": "bash"
           }
         ]
       }
@@ -111,7 +115,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/adw/scripts/log.sh\" hook"
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/adw/scripts/log.sh\" hook",
+            "shell": "bash"
           }
         ]
       }
@@ -121,7 +126,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/adw/scripts/log.sh\" hook"
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/adw/scripts/log.sh\" hook",
+            "shell": "bash"
           }
         ]
       }
@@ -131,7 +137,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/adw/scripts/log.sh\" hook"
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/adw/scripts/log.sh\" hook",
+            "shell": "bash"
           }
         ]
       }
@@ -141,7 +148,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/adw/scripts/log.sh\" hook"
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/skills/adw/scripts/log.sh\" hook",
+            "shell": "bash"
           }
         ]
       }
