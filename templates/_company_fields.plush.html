@@ -1,0 +1,23 @@
+<div class="contact-fields">
+  <div class="field">
+    <label for="company-name">Nombre</label>
+    <input id="company-name" type="text" name="name" value="<%= company.Name %>" maxlength="150" autocomplete="off" required<%= if (len(errors.Get("name")) > 0) { %> aria-invalid="true" aria-describedby="company-name-error"<% } %>>
+    <%= if (len(errors.Get("name")) > 0) { %>
+      <p id="company-name-error" class="field-error" role="alert"><%= for (msg) in errors.Get("name") { %><%= msg %><% } %></p>
+    <% } %>
+  </div>
+  <div class="field">
+    <label for="company-website">Web</label>
+    <input id="company-website" type="text" name="website" value="<%= company.Website %>" maxlength="200" autocomplete="off"<%= if (len(errors.Get("website")) > 0) { %> aria-invalid="true" aria-describedby="company-website-error"<% } %>>
+    <%= if (len(errors.Get("website")) > 0) { %>
+      <p id="company-website-error" class="field-error" role="alert"><%= for (msg) in errors.Get("website") { %><%= msg %><% } %></p>
+    <% } %>
+  </div>
+  <div class="field">
+    <label for="company-sector">Sector</label>
+    <input id="company-sector" type="text" name="sector" value="<%= company.Sector %>" maxlength="100" autocomplete="off"<%= if (len(errors.Get("sector")) > 0) { %> aria-invalid="true" aria-describedby="company-sector-error"<% } %>>
+    <%= if (len(errors.Get("sector")) > 0) { %>
+      <p id="company-sector-error" class="field-error" role="alert"><%= for (msg) in errors.Get("sector") { %><%= msg %><% } %></p>
+    <% } %>
+  </div>
+</div>

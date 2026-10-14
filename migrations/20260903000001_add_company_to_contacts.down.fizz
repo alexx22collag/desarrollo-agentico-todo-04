@@ -1,0 +1,2 @@
+drop_foreign_key("contacts", "contacts_company_id_fk")
+drop_column("contacts", "company_id")

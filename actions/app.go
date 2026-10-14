@@ -62,6 +62,12 @@ func App() *buffalo.App {
 		app.GET("/contactos/{contact_id}/edit", ContactsEdit)
 		app.PUT("/contactos/{contact_id}", ContactsUpdate)
 		app.DELETE("/contactos/{contact_id}", ContactsDestroy)
+		app.GET("/empresas", CompaniesIndex)
+		app.POST("/empresas", CompaniesCreate)
+		app.GET("/empresas/{company_id}", CompaniesShow)
+		app.GET("/empresas/{company_id}/edit", CompaniesEdit)
+		app.PUT("/empresas/{company_id}", CompaniesUpdate)
+		app.DELETE("/empresas/{company_id}", CompaniesDestroy)
 		app.GET("/healthz", HealthCheck)
 
 		app.ServeFiles("/", http.FS(public.FS())) // serve files from the public directory

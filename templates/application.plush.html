@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tareas</title>
-    <link rel="stylesheet" href="/assets/app.css?v=4">
+    <link rel="stylesheet" href="/assets/app.css?v=5">
   </head>
   <body>
     <div class="app-layout">
@@ -26,6 +26,12 @@
               <path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6" />
             </svg>
             Contactos
+          </a>
+          <a href="/empresas" class="nav-link"<%= if (navSection(current_path) == "companies") { %> aria-current="true"<% } %>>
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 20V5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v15M14 10h5a1 1 0 0 1 1 1v9M3 20h18M8 8h2M8 12h2M8 16h2" />
+            </svg>
+            Empresas
           </a>
         </nav>
       </aside>

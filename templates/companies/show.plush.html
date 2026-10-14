@@ -1,0 +1,31 @@
+<header class="page-header">
+  <a href="/empresas" class="back-link"><span aria-hidden="true">←</span> Volver a empresas</a>
+  <h1><%= company.Name %></h1>
+  <p class="list-count">
+    <%= if (company.Sector != "") { %><%= company.Sector %><% } %>
+    <%= if (company.Website != "") { %><%= if (company.Sector != "") { %> · <% } %><%= company.Website %><% } %>
+  </p>
+  <p><a href="/empresas/<%= company.ID %>/edit" class="button">Editar empresa</a></p>
+</header>
+
+<section aria-labelledby="company-contacts-heading">
+  <h2 id="company-contacts-heading">Contactos</h2>
+  <%= if (len(contacts) == 0) { %>
+    <p class="empty-state">Esta empresa no tiene contactos todavía.</p>
+  <% } else { %>
+    <ul class="contact-list">
+      <%= for (ct) in contacts { %>
+        <li class="contact">
+          <div class="contact-main">
+            <a href="/contactos/<%= ct.ID %>/edit" class="contact-name"><%= ct.Name %></a>
+            <%= if (ct.JobTitle != "") { %><span class="contact-meta"><%= ct.JobTitle %></span><% } %>
+          </div>
+          <div class="contact-details">
+            <%= if (ct.Email != "") { %><span><%= ct.Email %></span><% } %>
+            <%= if (ct.Phone != "") { %><span><%= ct.Phone %></span><% } %>
+          </div>
+        </li>
+      <% } %>
+    </ul>
+  <% } %>
+</section>
