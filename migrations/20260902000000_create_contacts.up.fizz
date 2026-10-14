@@ -1,0 +1,8 @@
+create_table("contacts") {
+	t.Column("id", "uuid", {primary: true})
+	t.Column("name", "string", {"size": 120})
+	t.Column("email", "string", {"size": 200, "default": ""})
+	t.Column("phone", "string", {"size": 40, "default": ""})
+	t.Column("job_title", "string", {"size": 120, "default": ""})
+	t.Timestamps()
+}

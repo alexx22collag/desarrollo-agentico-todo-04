@@ -1,0 +1,14 @@
+<header class="page-header">
+  <a href="/contactos" class="back-link"><span aria-hidden="true">←</span> Volver a contactos</a>
+  <h1>Editar contacto</h1>
+</header>
+
+<form action="/contactos/<%= contact.ID %>" method="POST" class="contact-form">
+  <input type="hidden" name="authenticity_token" value="<%= authenticity_token %>">
+  <input type="hidden" name="_method" value="PUT">
+  <%= partial("contact_fields.plush.html") %>
+  <div class="edit-task-actions">
+    <a href="/contactos" class="button">Cancelar</a>
+    <button type="submit" class="button button-primary">Guardar cambios</button>
+  </div>
+</form>

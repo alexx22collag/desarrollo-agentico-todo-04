@@ -44,6 +44,9 @@ func App() *buffalo.App {
 		// Protect against CSRF attacks. https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)
 		app.Use(csrf.New)
 
+		// Expone la ruta actual a las plantillas (resalta la sección activa del menú).
+		app.Use(currentPath)
+
 		// Wraps each request in a transaction.
 		//   c.Value("tx").(*pop.Connection)
 		app.Use(popmw.Transaction(models.DB))
@@ -54,12 +57,25 @@ func App() *buffalo.App {
 		app.PUT("/tasks/{task_id}", TasksUpdate)
 		app.PUT("/tasks/{task_id}/toggle", TasksToggle)
 		app.DELETE("/tasks/{task_id}", TasksDestroy)
+		app.GET("/contactos", ContactsIndex)
+		app.POST("/contactos", ContactsCreate)
+		app.GET("/contactos/{contact_id}/edit", ContactsEdit)
+		app.PUT("/contactos/{contact_id}", ContactsUpdate)
+		app.DELETE("/contactos/{contact_id}", ContactsDestroy)
 		app.GET("/healthz", HealthCheck)
 
 		app.ServeFiles("/", http.FS(public.FS())) // serve files from the public directory
 	})
 
 	return app
+}
+
+// currentPath guarda en el contexto la ruta de la petición como "current_path".
+func currentPath(next buffalo.Handler) buffalo.Handler {
+	return func(c buffalo.Context) error {
+		c.Set("current_path", c.Request().URL.Path)
+		return next(c)
+	}
 }
 
 // forceSSL will return a middleware that will redirect an incoming request
